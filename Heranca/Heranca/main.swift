@@ -78,9 +78,51 @@ print(meuNomeBarbara.peso)
 // Uma das classes filhas deve conter contrutor indicando os valores de todas as suas propriedades.
 
 
+class Tecnologia {
+    
+    var wifi: Bool
+    var tela: Bool
+    var teclado: String
+    
+    init(wifi: Bool, tela: Bool, teclado: String) {
+        self.wifi = wifi
+        self.tela = tela
+        self.teclado = teclado
+    }
+    
+    func conectarPessoa() {
+        print("A teclogia está conectado com as pessoas")
+    }
+    
+    func ajudarPessoas() {
+        print("A tecnologia ajuda pessoas")
+    }
+    
+}
+
+class Celular: Tecnologia {
+    var marca: String
+    var modelo: String
+    var ano: Int
+    
+    init(marca: String, modelo: String, ano: Int, wifi: Bool, tela: Bool, teclado: String) {
+        self.marca = marca
+        self.modelo = modelo
+        self.ano = ano
+        super.init(wifi: wifi, tela: tela, teclado: teclado)
+    }
+    
+}
+
+class Mac: Tecnologia {
+    var marca: String = "Apple"
+    var modelo: String = "MacBook Pro"
+    var ano: Int = 2020
+}
 
 
+var meuCelular: Celular = Celular(marca: "Apple", modelo: "Iphone 14", ano: 2023, wifi: true, tela: true, teclado: "PT-BR")
 
 
-
-
+//    "" -> String vazia
+//    nil -> SIGNIFICA NENHUM VALOR
